@@ -11,7 +11,7 @@ This application is a modified version of the Quarkus quickstart/guide for
 differences:
 
 * Set `quarkus.smallrye-openapi.store-schema-directory` in *application.properties*
-* Updated *.gitignore* to with `openapi.json` and `openapi.yaml`
+* Updated *.gitignore* with `openapi.json` and `openapi.yaml`
 * Added the `quarkus-openshift` extension
 
 ## Usage
