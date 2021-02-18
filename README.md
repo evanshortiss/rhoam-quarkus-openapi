@@ -36,3 +36,16 @@ Exposes the application on `http://localhost:8080` and enables live reload.
 ```bash
 ./mvnw clean package -Dquarkus.kubernetes.deploy=true -Dquarkus.openshift.expose=true
 ```
+
+### Import to 3scale API Management
+
+Add the following annotations and label to the Service associated with the Quarkus application you deployed in the previous section:
+
+```bash
+oc annotate svc/rhoam-openapi "discovery.3scale.net/description-path=/openapi?format=json"
+oc annotate svc/rhoam-openapi discovery.3scale.net/port="8080"
+oc annotate svc/rhoam-openapi discovery.3scale.net/scheme=http
+oc label svc/rhoam-openapi discovery.3scale.net="true"
+```
+
+Now you can import the Service using 3scale Service Discovery.
