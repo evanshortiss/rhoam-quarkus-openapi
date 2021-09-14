@@ -53,5 +53,6 @@ Now you can import the Service using 3scale Service Discovery.
 ### Build an Image
 
 ```
-docker build . -f src/docker/Dockerfile.jvm -t quay.io/evanshortiss/rhoam-quarkus-openapi
+./mvnw clean package
+docker build . -f src/docker/Dockerfile.jvm -t quay.io/evanshortiss/rhoam-quarkus-openapi:latest
 ```
